@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "FlowNotes",
+  "version": "0.1.0",
+  "description": "AI-synthesized research notes across all your tabs",
+  "permissions": ["tabs", "activeTab", "scripting", "storage", "sidePanel"],
+  "host_permissions": ["<all_urls>", "https://api.anthropic.com/*"],
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "sidepanel/sidepanel.html" },
+  "action": {
+    "default_title": "Open FlowNotes",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}

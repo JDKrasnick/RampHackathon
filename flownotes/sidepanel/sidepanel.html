@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowNotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+
+  <!-- Setup view -->
+  <div id="view-setup" class="view active">
+    <div class="setup-header">
+      <div class="logo-mark">FN</div>
+      <h1 class="logo-text">FlowNotes</h1>
+      <p class="tagline">Cross-tab research synthesis, live</p>
+    </div>
+
+    <form id="setup-form" class="setup-form" autocomplete="off">
+      <div class="field">
+        <label for="input-topic">Research Topic</label>
+        <input id="input-topic" type="text" placeholder="e.g. lithium battery recycling" spellcheck="false" />
+      </div>
+      <div class="field">
+        <label for="input-key">Anthropic API Key</label>
+        <input id="input-key" type="password" placeholder="sk-ant-..." spellcheck="false" />
+        <span class="field-hint">Stored locally, never sent anywhere except api.anthropic.com</span>
+      </div>
+      <div class="field">
+        <label>Mode</label>
+        <div class="mode-toggle" id="mode-toggle">
+          <button type="button" class="mode-btn active" data-mode="research">Research</button>
+          <button type="button" class="mode-btn" data-mode="study">Study</button>
+        </div>
+      </div>
+      <button type="submit" id="btn-start" class="btn-primary">Start Session</button>
+    </form>
+  </div>
+
+  <!-- Active view -->
+  <div id="view-active" class="view">
+    <header class="active-header">
+      <div class="header-left">
+        <span class="logo-sm">FlowNotes</span>
+        <span id="source-badge" class="source-badge">0 sources</span>
+      </div>
+      <div class="header-right">
+        <button id="btn-reset" class="btn-ghost" title="Reset session">Reset</button>
+      </div>
+    </header>
+
+    <div id="status-bar" class="status-bar hidden">
+      <span id="status-text"></span>
+      <span id="status-spinner" class="spinner hidden"></span>
+    </div>
+
+    <div id="notes-container">
+      <div id="notes-content" class="notes-content">
+        <div id="notes-placeholder" class="placeholder">
+          <div class="placeholder-icon">◎</div>
+          <p>Browse a tab to capture it.</p>
+          <p class="placeholder-sub">Visit a second tab to trigger synthesis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../lib/marked.min.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
