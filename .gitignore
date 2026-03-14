@@ -1,0 +1,11 @@
+# IDE
+.idea/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+
+CLAUDE.md
